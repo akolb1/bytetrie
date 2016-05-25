@@ -1,4 +1,4 @@
-package bytetrie_test
+package bytetrie
 
 import (
 	"testing"
