@@ -5,9 +5,8 @@
 // supports trie where keys are byte sequences. Also, it has a Match() function
 // which is missing in other trie implementation. The intention is to use it to
 // match file type by initial bytes in the file.
-
-The library is inspired by Trie code developed by Drew Noakes for the
-https://github.com/drewnoakes/metadata-extractor library.
+// The library is inspired by Trie code developed by Drew Noakes for the
+// https://github.com/drewnoakes/metadata-extractor library.
 
 package bytetrie
 
