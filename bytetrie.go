@@ -1,10 +1,19 @@
 // Package bytetrie provides implementation of a trie with sequence of bytes as
 // a key
+//
+// There are several trie implementations around. This one is very simple and only
+// supports trie where keys are byte sequences. Also, it has a Match() function
+// which is missing in other trie implementation. The intention is to use it to
+// match file type by initial bytes in the file.
+
+The library is inspired by Trie code developed by Drew Noakes for the
+https://github.com/drewnoakes/metadata-extractor library.
 
 package bytetrie
 
 import "fmt"
 
+// Trie node
 type node struct {
 	value    interface{}
 	hasValue bool
@@ -24,7 +33,7 @@ func New() *Trie {
 	return trie
 }
 
-// Init initializes a trie
+// Init initializes a trie (in case it wasn't created with New() )
 func (trie *Trie) Init() {
 	if trie.root == nil {
 		trie.root = &node{children: make(map[byte]*node)}
@@ -61,7 +70,7 @@ func (trie *Trie) Insert(value interface{}, keys ...[]byte) {
 	}
 }
 
-// Recursive trie walk, print any node that has non-nil value
+// Recursive trie walk, apply cb function to each node that has a value.
 func walk(n *node, currKey []byte, cb func(key []byte, value interface{})) {
 	if n.hasValue {
 		cb(currKey, n.value)

@@ -3,8 +3,8 @@ package bytetrie
 import (
 	"testing"
 
-	"github.com/akolb1/filetypes/bytetrie"
 	"fmt"
+	"github.com/akolb1/filetypes/bytetrie"
 )
 
 // TestEmpty checks properties of an empty tree
@@ -121,7 +121,7 @@ func Example() {
 	trie.PrintKeys()
 }
 
-func ExampleGet() {
+func ExampleTrie_Get() {
 	trie := bytetrie.New()
 	trie.Insert(1, []byte("hello"))
 	trie.Insert(2, []byte("world"))
@@ -132,7 +132,7 @@ func ExampleGet() {
 	// Output: 3 true
 }
 
-func ExampleMatch() {
+func ExampleTrie_Match() {
 	trie := bytetrie.New()
 	trie.Insert(1, []byte("hello"))
 	trie.Insert(2, []byte("world"))
@@ -143,7 +143,7 @@ func ExampleMatch() {
 	// Output: 1 true
 }
 
-func ExampleDo() {
+func ExampleTrie_Do() {
 	trie := bytetrie.New()
 	trie.Insert(1, []byte("hello"))
 	trie.Insert(2, []byte("world"))
