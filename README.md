@@ -19,5 +19,6 @@ $ go get github.com/akolb1/bytetrie
 
 ## Usage & Example
 
-For usage and examples see the [Godoc](http://godoc.org/github.com/akolb1/bytetrie).
+For usage and examples see the
+[![GoDoc](https://godoc.org/github.com/akolb1/bytetrie?status.svg)](https://godoc.org/github.com/akolb1/bytetrie)
 
